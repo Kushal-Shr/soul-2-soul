@@ -21,6 +21,7 @@ const Header = () => {
         {/* top-part */}
         <div className='w-full flex flex-col items-center'>
           <div className='w-full flex items-center justify-around transition-all duration-300'>
+            <a href="/about/kitchen">
               <Image 
                 src="/kitchen-logo.png" 
                 alt="logo" 
@@ -28,6 +29,8 @@ const Header = () => {
                 height={150} 
                 className={`transition-all duration-300 ${isScrolled ? 'w-[50px] h-[50px] md:w-[70px] md:h-[70px]' : 'w-[100px] h-[100px] md:w-[150px] md:h-[150px]'}`}
               />
+              </a>
+              <a href="/home">
               <Image 
                 src="/logo.png" 
                 alt="logo" 
@@ -35,6 +38,8 @@ const Header = () => {
                 height={100} 
                 className={`transition-all duration-300 object-contain ${isScrolled ? 'w-[50px] h-[33px] md:w-[70px] md:h-[47px]' : 'w-[100px] h-[67px] md:w-[150px] md:h-[100px]'}`}
               />
+              </a>
+              <a href="/about/lounge">
               <Image 
                 src="/lounge-logo.png" 
                 alt="logo" 
@@ -42,6 +47,7 @@ const Header = () => {
                 height={150} 
                 className={`transition-all duration-300 ${isScrolled ? 'w-[50px] h-[50px] md:w-[70px] md:h-[70px]' : 'w-[100px] h-[100px] md:w-[150px] md:h-[150px]'}`}
               />
+              </a>
           </div>
 
           {/* Hamburger Menu Button */}

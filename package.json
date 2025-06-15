@@ -13,6 +13,7 @@
     "@react-pdf-viewer/default-layout": "^3.12.0",
     "@react-pdf/renderer": "^4.3.0",
     "framer-motion": "^12.18.1",
+    "googleapis": "^150.0.1",
     "html2canvas": "^1.4.1",
     "next": "15.3.3",
     "react": "^19.0.0",

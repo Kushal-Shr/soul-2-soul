@@ -12,11 +12,38 @@ const ContactPage = () => {
     subject: '',
     message: ''
   })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log(formData)
+    setLoading(true)
+    setError('')
+    setSuccess(false)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      const data = await response.json()
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to send message')
+      }
+      setSuccess(true)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      })
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -110,7 +137,16 @@ const ContactPage = () => {
           {/* Contact Form */}
           <div className="bg-black/30 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-[#e2b76a]/20">
             <h2 className="text-2xl md:text-3xl font-serif text-[#e2b76a] mb-6">Send us a Message</h2>
-            
+            {error && (
+              <div className="mb-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-center">
+                {error}
+              </div>
+            )}
+            {success && (
+              <div className="mb-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-center">
+                Thank you for contacting us! We will get back to you soon.
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
@@ -179,9 +215,10 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-[#e2b76a] text-black font-semibold rounded-lg hover:bg-[#c69c59] transition-all duration-300"
+                disabled={loading}
+                className={`w-full px-6 py-3 bg-[#e2b76a] text-black font-semibold rounded-lg transition-all duration-300 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#c69c59]'}`}
               >
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
