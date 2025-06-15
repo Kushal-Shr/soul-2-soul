@@ -21,7 +21,7 @@ const Header = () => {
         {/* top-part */}
         <div className='w-full flex flex-col items-center'>
           <div className='w-full flex items-center justify-around transition-all duration-300'>
-            <a href="/about/kitchen">
+            <a href="/about/kitchen" className={`${isMobileMenuOpen ? 'z-50' : ''}`}>
               <Image 
                 src="/kitchen-logo.png" 
                 alt="logo" 
@@ -29,8 +29,8 @@ const Header = () => {
                 height={150} 
                 className={`transition-all duration-300 ${isScrolled ? 'w-[50px] h-[50px] md:w-[70px] md:h-[70px]' : 'w-[100px] h-[100px] md:w-[150px] md:h-[150px]'}`}
               />
-              </a>
-              <a href="/home">
+            </a>
+            <a href="/" className={`${isMobileMenuOpen ? 'z-50' : ''}`}>
               <Image 
                 src="/logo.png" 
                 alt="logo" 
@@ -38,8 +38,8 @@ const Header = () => {
                 height={100} 
                 className={`transition-all duration-300 object-contain ${isScrolled ? 'w-[50px] h-[33px] md:w-[70px] md:h-[47px]' : 'w-[100px] h-[67px] md:w-[150px] md:h-[100px]'}`}
               />
-              </a>
-              <a href="/about/lounge">
+            </a>
+            <a href="/about/lounge" className={`${isMobileMenuOpen ? 'z-50' : ''}`}>
               <Image 
                 src="/lounge-logo.png" 
                 alt="logo" 
@@ -47,13 +47,13 @@ const Header = () => {
                 height={150} 
                 className={`transition-all duration-300 ${isScrolled ? 'w-[50px] h-[50px] md:w-[70px] md:h-[70px]' : 'w-[100px] h-[100px] md:w-[150px] md:h-[150px]'}`}
               />
-              </a>
+            </a>
           </div>
 
           {/* Hamburger Menu Button */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden mt-4 text-[#e2b76a] z-50"
+            className="md:hidden text-[#e2b76a] z-50"
           >
             <div className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
             <div className={`w-6 h-0.5 bg-current my-1.5 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
@@ -62,8 +62,8 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden fixed inset-0 bg-black bg-opacity-95 backdrop-blur-sm z-40 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className='flex flex-col items-center justify-center h-full space-y-6 text-[#e2b76a] text-xl pt-20'>
+        <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className='flex flex-col items-center space-y-6 text-[#e2b76a] text-xl pt-32'>
             <Link href="/" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             <div className='relative group'>
               <button className='hover:text-[#c69c59] transition-colors'>About</button>
