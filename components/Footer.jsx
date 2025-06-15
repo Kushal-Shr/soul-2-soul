@@ -3,13 +3,11 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaFacebook, FaInstagram, FaTwitter, FaPhone, FaChevronDown } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaTwitter, FaPhone } from 'react-icons/fa'
 
 const Footer = () => {
-  const [isAboutOpen, setIsAboutOpen] = useState(false)
-
   return (
-    <footer className='w-full bg-black text-white py-12'>
+    <footer className='w-full bg-black text-[#e2b76a] py-12'>
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
           {/* Logos Section */}
@@ -51,35 +49,29 @@ const Footer = () => {
           </div>
 
           {/* Quick Links Section */}
-          <div className='text-center'>
+          <div className='text-center flex-col'>
             <h3 className='text-xl font-semibold mb-4'>Quick Links</h3>
-            <div className='space-y-2'>
-              <Link href="/" className='block hover:text-gray-300'>Home</Link>
-              <Link href="/menu" className='block hover:text-gray-300'>Menu</Link>
+            <div className='flex flex-col items-center space-y-4'>
+              <Link href="/" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Home</Link>
+              <Link href="/menu" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Menu</Link>
               
-              {/* About Dropdown */}
-              <div className='relative'>
-                <button
-                  onClick={() => setIsAboutOpen(!isAboutOpen)}
-                  className='w-full flex items-center justify-center space-x-2 hover:text-gray-300'
-                >
-                  <span>About</span>
-                  <FaChevronDown className={`transform transition-transform ${isAboutOpen ? 'rotate-180' : ''}`} />
+              {/* About Links */}
+              <div className='relative group'>
+                <button className='relative inline-block hover:text-[#c69c59] transition-colors cursor-pointer after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full group-hover:after:w-full after:transition-all'>
+                  About
                 </button>
-                {isAboutOpen && (
-                  <div className='absolute left-1/2 transform -translate-x-1/2 mt-2 bg-gray-900 rounded-lg shadow-lg py-2 w-48'>
-                    <Link href="/about/kitchen" className='block px-4 py-2 hover:bg-gray-800 hover:text-gray-300'>
-                      Kitchen
-                    </Link>
-                    <Link href="/about/lounge" className='block px-4 py-2 hover:bg-gray-800 hover:text-gray-300'>
-                      Lounge
-                    </Link>
-                  </div>
-                )}
+                <div className='absolute hidden group-hover:block left-1/2 transform -translate-x-1/2 mt-2 py-2 w-48 z-50 bg-black/95 backdrop-blur-sm rounded-lg border border-[#e2b76a]/20'>
+                  <Link href="/about/kitchen" className='block py-2 text-center hover:text-[#c69c59] transition-colors'>
+                    Kitchen
+                  </Link>
+                  <Link href="/about/lounge" className='block py-2 text-center hover:text-[#c69c59] transition-colors'>
+                    Lounge
+                  </Link>
+                </div>
               </div>
 
-              <Link href="/contact" className='block hover:text-gray-300'>Contact</Link>
-              <Link href="/reservations" className='block hover:text-gray-300'>Reservations</Link>
+              <Link href="/contact" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Contact</Link>
+              <Link href="/reservations" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Reservations</Link>
             </div>
           </div>
 
@@ -88,22 +80,22 @@ const Footer = () => {
             <h3 className='text-xl font-semibold mb-4'>Contact Us</h3>
             <div className='space-y-4'>
               <div className='flex items-center justify-center space-x-2'>
-                <FaPhone className='text-gray-400' />
-                <a href="tel:+1234567890" className='hover:text-gray-300'>+1 (234) 567-890</a>
+                <FaPhone className='text-[#e2b76a]' />
+                <a href="tel:+1234567890" className='hover:text-[#c69c59] transition-colors'>+1 (234) 567-890</a>
               </div>
-              <div className='space-y-2'>
+              <div className='space-y-2 text-[#e2b76a]/80'>
                 <p>Monday - Thursday: 11:00 AM - 10:00 PM</p>
                 <p>Friday - Saturday: 11:00 AM - 11:00 PM</p>
                 <p>Sunday: 12:00 PM - 9:00 PM</p>
               </div>
-              <div className='flex justify-center space-x-4 mt-4'>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className='hover:text-gray-300'>
+              <div className='flex justify-center space-x-6 mt-4'>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
                   <FaFacebook size={24} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className='hover:text-gray-300'>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
                   <FaInstagram size={24} />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className='hover:text-gray-300'>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
                   <FaTwitter size={24} />
                 </a>
               </div>
@@ -112,7 +104,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className='mt-12 pt-8 border-t border-gray-800 text-center'>
+        <div className='mt-12 pt-8 border-t border-[#e2b76a]/20 text-center text-[#e2b76a]/80'>
           <p>&copy; {new Date().getFullYear()} Soul2Soul. All rights reserved.</p>
         </div>
       </div>
