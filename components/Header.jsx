@@ -1,23 +1,32 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaChevronDown } from 'react-icons/fa'
 
 const Header = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="w-full p-7 flex-row items-c justify-between">
+    <header className="sticky top-0 z-50 w-full pb-10 flex-row items-c justify-between bg-black bg-opacity-90 backdrop-blur">
         {/* top-part */}
-        <div className='w-full flex items-center justify-around'>
-            <Image src="/kitchen-logo.png" alt="logo" width={150} height={150} />
-            <Image src="/logo.png" alt="logo" width={150} height={150} />
-            <Image src="/lounge-logo.png" alt="logo" width={150} height={150} />
+        <div className='w-full flex items-center justify-around transition-all duration-300'>
+            <Image src="/kitchen-logo.png" alt="logo" width={isScrolled ? 70 : 150} height={isScrolled ? 70 : 150} className="transition-all duration-300" />
+            <Image src="/logo.png" alt="logo" width={isScrolled ? 70 : 150} height={isScrolled ? 70 : 150} className="transition-all duration-300" />
+            <Image src="/lounge-logo.png" alt="logo" width={isScrolled ? 70 : 150} height={isScrolled ? 70 : 150} className="transition-all duration-300" />
         </div>
         {/* bottom-part */}
-        <div className='w-full flex items-center justify-center gap-25'>
+        <div className='w-full flex items-center justify-center gap-21'>
             <Link href="/" className="hover:text-gray-300">Home</Link>
             
             {/* About Dropdown */}
