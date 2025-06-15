@@ -123,10 +123,10 @@ const ContactPage = () => {
               <div className="text-center pt-4">
                 <h3 className="text-xl text-[#e2b76a] mb-4">Follow Us</h3>
                 <div className="flex justify-center gap-8">
-                  <a href="#" className="text-[#e2b76a] hover:text-[#c69c59] transition-colors">
+                  <a href="https://www.facebook.com/profile.php?id=61566440025358" className="text-[#e2b76a] hover:text-[#c69c59] transition-colors">
                     <FaInstagram size={24} className='cursor-pointer' />
                   </a>
-                  <a href="#" className="text-[#e2b76a] hover:text-[#c69c59] transition-colors">
+                  <a href="https://www.instagram.com/soul2soul_stl/" className="text-[#e2b76a] hover:text-[#c69c59] transition-colors">
                     <FaFacebook size={24} className='cursor-pointer' />
                   </a>
                 </div>
@@ -216,7 +216,7 @@ const ContactPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full px-6 py-3 bg-[#e2b76a] text-black font-semibold rounded-lg transition-all duration-300 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#c69c59]'}`}
+                className={`w-full cursor-pointer px-6 py-3 bg-[#e2b76a] text-black font-semibold rounded-lg transition-all duration-300 ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#c69c59]'}`}
               >
                 {loading ? 'Sending...' : 'Send Message'}
               </button>

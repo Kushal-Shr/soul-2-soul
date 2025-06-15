@@ -270,7 +270,7 @@ const ReservationPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full px-8 py-4 bg-[#e2b76a] text-black font-semibold rounded-lg transition-all duration-300 ${
+              className={`w-full cursor-pointer px-8 py-4 bg-[#e2b76a] text-black font-semibold rounded-lg transition-all duration-300 ${
                 loading 
                   ? 'opacity-50 cursor-not-allowed'
                   : 'hover:bg-[#c69c59]'

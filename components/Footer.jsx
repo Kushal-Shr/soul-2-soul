@@ -15,6 +15,7 @@ const Footer = () => {
           <div className='flex flex-col items-center space-y-6'>
             <h3 className='text-xl font-semibold mb-4'>Our Brands</h3>
             <div className='flex flex-col items-center space-y-4'>
+              <a href="/about/kitchen">
               <Image
                 src="/kitchen-logo.png"
                 alt="Kitchen Logo"
@@ -22,6 +23,8 @@ const Footer = () => {
                 height={40}
                 className='object-contain md:w-[150px]'
               />
+              </a>
+              <a href="/about/lounge">
               <Image
                 src="/lounge-logo.png"
                 alt="Lounge Logo"
@@ -29,6 +32,7 @@ const Footer = () => {
                 height={40}
                 className='object-contain md:w-[150px]'
               />
+              </a>
             </div>
           </div>
 
@@ -58,9 +62,7 @@ const Footer = () => {
             <h3 className='text-xl font-semibold mb-4'>Quick Links</h3>
             <div className='flex flex-col items-center space-y-4'>
               <Link href="/" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Home</Link>
-              <Link href="/menu" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Menu</Link>
-              
-              {/* About Links */}
+
               <div className='relative group'>
                 <button className='relative inline-block hover:text-[#c69c59] transition-colors cursor-pointer after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full group-hover:after:w-full after:transition-all'>
                   About
@@ -74,6 +76,8 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
+
+              <Link href="/menu" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Menu</Link>
 
               <Link href="/contact" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Contact</Link>
               <Link href="/reservations" className='relative inline-block hover:text-[#c69c59] transition-colors after:content-[""] after:absolute after:w-0 after:h-[2px] after:bg-[#e2b76a] after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:rounded-full hover:after:w-full after:transition-all'>Reservations</Link>
@@ -90,7 +94,7 @@ const Footer = () => {
               </div>
               <div className='flex items-center justify-center space-x-2'>
                 <FaMessage className='text-[#e2b76a]' />
-                <a href="mailto:info@s2sstl.com" className='hover:text-[#c69c59] cursor-pointer transition-colors'>info@s2sstl.com</a>
+                <a href="mailto:info@s2sstl.com" target='_blank' className='hover:text-[#c69c59] cursor-pointer transition-colors'>info@s2sstl.com</a>
               </div>
               <div className='space-y-2 text-[#e2b76a]/80'>
                 <p className='text-sm md:text-base'>Brunch Hours: 12:00 PM - 5:00 PM</p>
@@ -100,10 +104,10 @@ const Footer = () => {
                 <p className='text-sm md:text-base'>Tuesday - Sunday: 5:00 PM - 1:30 AM</p>
               </div>
               <div className='flex justify-center space-x-6 mt-4'>
-                  <a href='#' target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
+                  <a href='https://www.facebook.com/profile.php?id=61566440025358' target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
                     <FaFacebook size={24} className='cursor-pointer' />
                   </a>
-                  <a href='#' target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
+                  <a href='https://www.instagram.com/soul2soul_stl/' target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
                     <FaInstagram size={24} className='cursor-pointer' />
                   </a>
               </div>
