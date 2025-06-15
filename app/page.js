@@ -80,7 +80,7 @@ const page = () => {
       {/* Cover Section */}
       <main className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
         <Image src="/cover.jpg" alt="background" fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80 backdrop-blur-sm z-10" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-4">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-[#e2b76a] mb-4 drop-shadow-lg">
             Welcome to Soul 2 Soul
@@ -91,13 +91,13 @@ const page = () => {
           <div className="flex gap-4">
             <Link 
               href="/menu" 
-              className="inline-block px-8 py-3 bg-[#e2b76a] text-black font-semibold rounded hover:bg-[#c69c59] transition text-lg mt-2 border-2 border-[#e2b76a]"
+              className="inline-block px-8 py-3 bg-[#e2b76a] text-black font-semibold rounded-2xl hover:bg-[#c69c59] transition text-lg mt-2 border-2 border-[#e2b76a]"
             >
               View Menu
             </Link>
             <Link 
               href="/reservation" 
-              className="inline-block px-8 py-3 bg-transparent text-[#e2b76a] font-semibold rounded hover:bg-[#e2b76a] hover:text-black transition text-lg mt-2 border-2 border-[#e2b76a]"
+              className="inline-block px-8 py-3 bg-transparent text-[#e2b76a] font-semibold rounded-2xl hover:bg-[#e2b76a] hover:text-black transition text-lg mt-2 border-2 border-[#e2b76a]"
             >
               Make Reservation
             </Link>
@@ -106,7 +106,7 @@ const page = () => {
       </main>
 
       {/* Kitchen & Lounge Sections */}
-      <section className="w-full mx-auto p-16 grid grid-cols-1 md:grid-cols-2 gap-10 bg-black">
+      <section className="w-full mx-auto px-16 pt-16 grid grid-cols-1 md:grid-cols-2 gap-10 bg-black">
         {/* Kitchen Section */}
         <div className="bg-[#18171c] rounded-lg shadow-lg overflow-hidden flex flex-col items-stretch border border-[#e2b76a]/20">
           <div className="relative w-full h-80">
@@ -114,12 +114,12 @@ const page = () => {
             <div className="absolute inset-0 bg-black/30 z-10" />
             <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col items-center z-20">
               <h3 className="text-2xl font-bold mb-2 text-[#e2b76a]">Soul2Soul Kitchen</h3>
-              <p className="text-gray-200 mb-4 text-center">
+              <p className="text-gray-200 mb-4 text-center w-3/4">
                 Experience culinary excellence and soulful dining. Our kitchen brings together tradition and innovation to create unforgettable flavors.
               </p>
               <Link 
                 href="/about/kitchen" 
-                className="px-6 py-2 bg-[#e2b76a] text-black rounded hover:bg-[#c69c59] transition border border-[#e2b76a]"
+                className="px-6 py-2 bg-[#e2b76a] text-black rounded-2xl hover:bg-[#c69c59] transition border border-[#e2b76a]"
               >
                 About Kitchen
               </Link>
@@ -133,12 +133,12 @@ const page = () => {
             <div className="absolute inset-0 bg-black/30 z-10" />
             <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col items-center z-20">
               <h3 className="text-2xl font-bold mb-2 text-[#e2b76a]">Soul2Soul Lounge</h3>
-              <p className="text-gray-200 mb-4 text-center">
+              <p className="text-gray-200 mb-4 text-center w-3/4">
                 Discover a sanctuary for music, art, and culture. Our lounge is the perfect place to relax, connect, and enjoy vibrant entertainment.
               </p>
               <Link 
                 href="/about/lounge" 
-                className="px-6 py-2 bg-[#e2b76a] text-black rounded hover:bg-[#c69c59] transition border border-[#e2b76a]"
+                className="px-6 py-2 bg-[#e2b76a] text-black rounded-2xl hover:bg-[#c69c59] transition border border-[#e2b76a]"
               >
                 About Lounge
               </Link>
@@ -151,8 +151,8 @@ const page = () => {
       <MustHaves />
 
       {/* Info Section */}
-      <section className="w-full bg-[#18171c] py-12 px-2 border-t border-[#e2b76a]/20">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-7 gap-0 items-center text-center">
+      <section className="w-full bg-[#0e0e10] py-8 px-12 border-t border-[#e2b76a]/20">
+        <div className=" mx-auto grid grid-cols-1 md:grid-cols-7 gap-0 items-center text-center">
           {/* Soulful Events */}
           <div className="md:col-span-1 flex flex-col items-center py-6">
             <span className="text-5xl mb-4">📅</span>
@@ -165,7 +165,7 @@ const page = () => {
           <div className="hidden md:block md:col-span-1 text-3xl text-[#e2b76a]">:</div>
           {/* Dining Area */}
           <div className="md:col-span-1 flex flex-col items-center py-6">
-            <div className="mb-4 w-16 h-16 relative">
+            <div className="mb-4 w-30 h-30 relative">
               <Image src="/kitchen-logo.png" alt="Dining Area" fill className="object-contain" />
             </div>
             <h3 className="text-2xl font-bold text-[#e2b76a] mb-2">Dining Area</h3>
@@ -177,7 +177,7 @@ const page = () => {
           <div className="hidden md:block md:col-span-1 text-3xl text-[#e2b76a]">:</div>
           {/* Lounge Section */}
           <div className="md:col-span-1 flex flex-col items-center py-6">
-            <div className="mb-4 w-16 h-16 relative">
+            <div className="mb-4 w-30 h-30 relative">
               <Image src="/lounge-logo.png" alt="Lounge Section" fill className="object-contain" />
             </div>
             <h3 className="text-2xl font-bold text-[#e2b76a] mb-2">Lounge Section</h3>
