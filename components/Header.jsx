@@ -62,22 +62,22 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm z-40 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className='flex flex-col items-center space-y-6 text-[#e2b76a] text-xl pt-32'>
-            <Link href="/" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-            <div className='relative group'>
-              <button className='hover:text-[#c69c59] transition-colors'>About</button>
-              <div className='relative mt-2 py-2 space-y-2'>
-                <Link href="/about/kitchen" className='block text-center hover:text-[#c69c59] transition-colors' onClick={() => setIsMobileMenuOpen(false)}>Kitchen</Link>
-                <Link href="/about/lounge" className='block text-center hover:text-[#c69c59] transition-colors' onClick={() => setIsMobileMenuOpen(false)}>Lounge</Link>
+        <div className={`md:hidden fixed inset-0 bg-black z-40 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className='flex flex-col items-center space-y-2 text-[#e2b76a] text-xl pt-32 bg-black w-full min-h-screen'>
+            <Link href="/" className="w-full text-center py-3 hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+            <div className='relative group w-full'>
+              <button className='w-full text-center py-3 hover:text-[#c69c59] transition-colors'>About</button>
+              <div className='w-full py-2 space-y-2'>
+                <Link href="/about/kitchen" className='block w-full text-center py-2 hover:text-[#c69c59] transition-colors' onClick={() => setIsMobileMenuOpen(false)}>Kitchen</Link>
+                <Link href="/about/lounge" className='block w-full text-center py-2 hover:text-[#c69c59] transition-colors' onClick={() => setIsMobileMenuOpen(false)}>Lounge</Link>
               </div>
             </div>
-            <Link href="/menu" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Menu</Link>
-            <Link href="/gallery" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Gallery</Link>
-            <Link href="/events" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Events</Link>
-            <Link href="/reservation" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Reservation</Link>
-            <Link href="/contact" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-            <Link href="/diamond-members" className="px-6 py-2 border-2 border-[#e2b76a] rounded-2xl hover:bg-[#e2b76a] hover:text-black transition-all mt-4" onClick={() => setIsMobileMenuOpen(false)}>Diamond Members</Link>
+            <Link href="/menu" className="w-full text-center py-3 hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Menu</Link>
+            <Link href="/gallery" className="w-full text-center py-3 hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Gallery</Link>
+            <Link href="/events" className="w-full text-center py-3 hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Events</Link>
+            <Link href="/reservation" className="w-full text-center py-3 hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Reservation</Link>
+            <Link href="/contact" className="w-full text-center py-3 hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+            <Link href="/diamond-members" className="w-full text-center py-3 px-6 border-2 border-[#e2b76a] rounded-2xl hover:bg-[#e2b76a] hover:text-black transition-all mt-4" onClick={() => setIsMobileMenuOpen(false)}>Diamond Members</Link>
           </div>
         </div>
 
