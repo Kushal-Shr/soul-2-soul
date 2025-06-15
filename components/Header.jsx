@@ -19,21 +19,23 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full pb-4 md:pb-10 flex-row items-c justify-between bg-black border-b border-[#e2b76a]/20 bg-opacity-90 backdrop-blur">
         {/* top-part */}
-        <div className='w-full flex items-center justify-around transition-all duration-300'>
-            <Image src="/kitchen-logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
-            <Image src="/logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
-            <Image src="/lounge-logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
-        </div>
+        <div className='w-full flex flex-col items-center'>
+          <div className='w-full flex items-center justify-around transition-all duration-300'>
+              <Image src="/kitchen-logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
+              <Image src="/logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
+              <Image src="/lounge-logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
+          </div>
 
-        {/* Hamburger Menu Button */}
-        <button 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden absolute right-4 top-4 text-[#e2b76a] z-50"
-        >
-          <div className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-          <div className={`w-6 h-0.5 bg-current my-1.5 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
-          <div className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
-        </button>
+          {/* Hamburger Menu Button */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden mt-4 text-[#e2b76a] z-50"
+          >
+            <div className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
+            <div className={`w-6 h-0.5 bg-current my-1.5 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></div>
+            <div className={`w-6 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <div className={`md:hidden fixed inset-0 bg-black bg-opacity-95 backdrop-blur-sm z-40 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>

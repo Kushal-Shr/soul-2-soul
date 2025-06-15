@@ -1,15 +1,15 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaFacebook, FaInstagram, FaTwitter, FaPhone } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className='w-full bg-black text-[#e2b76a] py-12'>
+    <footer className='w-full bg-black text-[#e2b76a] py-8 md:py-12'>
       <div className='container mx-auto px-4'>
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-8'>
           {/* Logos Section */}
           <div className='flex flex-col items-center space-y-6'>
             <h3 className='text-xl font-semibold mb-4'>Our Brands</h3>
@@ -17,16 +17,16 @@ const Footer = () => {
               <Image
                 src="/kitchen-logo.png"
                 alt="Kitchen Logo"
-                width={150}
-                height={50}
-                className='object-contain'
+                width={120}
+                height={40}
+                className='object-contain md:w-[150px]'
               />
               <Image
                 src="/lounge-logo.png"
                 alt="Lounge Logo"
-                width={150}
-                height={50}
-                className='object-contain'
+                width={120}
+                height={40}
+                className='object-contain md:w-[150px]'
               />
             </div>
           </div>
@@ -34,11 +34,11 @@ const Footer = () => {
           {/* Map Section */}
           <div className='text-center'>
             <h3 className='text-xl font-semibold mb-4'>Find Us</h3>
-            <div className='w-full h-48 relative'>
+            <div className='w-full h-40 md:h-48 relative'>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1647043087964!5m2!1sen!2s"
                 width="100%"
-                height="140%"
+                height="100%"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
@@ -84,9 +84,9 @@ const Footer = () => {
                 <a href="tel:+1234567890" className='hover:text-[#c69c59] transition-colors'>+1 (234) 567-890</a>
               </div>
               <div className='space-y-2 text-[#e2b76a]/80'>
-                <p>Monday - Thursday: 11:00 AM - 10:00 PM</p>
-                <p>Friday - Saturday: 11:00 AM - 11:00 PM</p>
-                <p>Sunday: 12:00 PM - 9:00 PM</p>
+                <p className='text-sm md:text-base'>Monday - Thursday: 11:00 AM - 10:00 PM</p>
+                <p className='text-sm md:text-base'>Friday - Saturday: 11:00 AM - 11:00 PM</p>
+                <p className='text-sm md:text-base'>Sunday: 12:00 PM - 9:00 PM</p>
               </div>
               <div className='flex justify-center space-x-6 mt-4'>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
@@ -104,8 +104,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className='mt-12 pt-8 border-t border-[#e2b76a]/20 text-center text-[#e2b76a]/80'>
-          <p>&copy; {new Date().getFullYear()} Soul2Soul. All rights reserved.</p>
+        <div className='mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#e2b76a]/20 text-center text-[#e2b76a]/80'>
+          <p className='text-sm md:text-base'>&copy; {new Date().getFullYear()} Soul2Soul. All rights reserved.</p>
         </div>
       </div>
     </footer>
