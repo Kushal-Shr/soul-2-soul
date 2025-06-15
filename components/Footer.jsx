@@ -3,7 +3,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaFacebook, FaInstagram, FaTwitter, FaPhone } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaPhone } from 'react-icons/fa'
+import { FaMessage } from 'react-icons/fa6'
 
 const Footer = () => {
   return (
@@ -34,9 +35,9 @@ const Footer = () => {
           {/* Map Section */}
           <div className='text-center'>
             <h3 className='text-xl font-semibold mb-4'>Find Us</h3>
-            <div className='w-full h-40 md:h-48 relative'>
+            <div className='w-full h-40 md:h-48 relative mb-4'>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1647043087964!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3115.8861793540147!2d-90.29514792374034!3d38.65516667171707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8b4a13366ba79%3A0x7b4e1e64a886a634!2s5917%20Delmar%20Blvd%2C%20St.%20Louis%2C%20MO%2063112!5e0!3m2!1sen!2sus!4v1699486183432!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -46,6 +47,10 @@ const Footer = () => {
                 className='rounded-lg'
               ></iframe>
             </div>
+            <address className='text-[#e2b76a]/80 text-sm md:text-base not-italic'>
+              5917 Delmar Blvd<br />
+              St. Louis, MO 63112
+            </address>
           </div>
 
           {/* Quick Links Section */}
@@ -81,23 +86,26 @@ const Footer = () => {
             <div className='space-y-4'>
               <div className='flex items-center justify-center space-x-2'>
                 <FaPhone className='text-[#e2b76a]' />
-                <a href="tel:+1234567890" className='hover:text-[#c69c59] transition-colors'>+1 (234) 567-890</a>
+                <a href="tel:+13142609357" className='hover:text-[#c69c59] transition-colors'>+1 (314) 2609357, +1 (314) 2609386</a>
+              </div>
+              <div className='flex items-center justify-center space-x-2'>
+                <FaMessage className='text-[#e2b76a]' />
+                <a href="mailto:info@s2sstl.com" className='hover:text-[#c69c59] cursor-pointer transition-colors'>info@s2sstl.com</a>
               </div>
               <div className='space-y-2 text-[#e2b76a]/80'>
-                <p className='text-sm md:text-base'>Monday - Thursday: 11:00 AM - 10:00 PM</p>
-                <p className='text-sm md:text-base'>Friday - Saturday: 11:00 AM - 11:00 PM</p>
-                <p className='text-sm md:text-base'>Sunday: 12:00 PM - 9:00 PM</p>
+                <p className='text-sm md:text-base'>Brunch Hours: 12:00 PM - 5:00 PM</p>
+                <p className='text-sm md:text-base'>Dinner Hours: 5:00 PM - 9:00 PM</p>
+                <p className='text-sm md:text-base'>Lounge Hours: 9:00 PM - 1:30 AM</p>
+                <p className='text-sm md:text-base'>Monday - Closed</p>
+                <p className='text-sm md:text-base'>Tuesday - Sunday: 5:00 PM - 1:30 AM</p>
               </div>
               <div className='flex justify-center space-x-6 mt-4'>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
-                  <FaFacebook size={24} />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
-                  <FaInstagram size={24} />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
-                  <FaTwitter size={24} />
-                </a>
+                  <a href='#' target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
+                    <FaFacebook size={24} className='cursor-pointer' />
+                  </a>
+                  <a href='#' target="_blank" rel="noopener noreferrer" className='text-[#e2b76a] hover:text-[#c69c59] transition-colors'>
+                    <FaInstagram size={24} className='cursor-pointer' />
+                  </a>
               </div>
             </div>
           </div>
