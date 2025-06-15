@@ -17,13 +17,31 @@ const Header = () => {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 w-full pb-4 md:pb-10 flex-row items-c justify-between bg-black border-b border-[#e2b76a]/20 bg-opacity-90 backdrop-blur">
+    <header className="md:sticky top-0 z-50 w-full pb-4 md:pb-10 flex-row items-c justify-between bg-black border-b border-[#e2b76a]/20 bg-opacity-90 backdrop-blur">
         {/* top-part */}
         <div className='w-full flex flex-col items-center'>
           <div className='w-full flex items-center justify-around transition-all duration-300'>
-              <Image src="/kitchen-logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
-              <Image src="/logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
-              <Image src="/lounge-logo.png" alt="logo" width={isScrolled ? 70 : 100} height={isScrolled ? 70 : 100} className="transition-all duration-300 md:w-[150px]" />
+              <Image 
+                src="/kitchen-logo.png" 
+                alt="logo" 
+                width={150} 
+                height={150} 
+                className={`transition-all duration-300 ${isScrolled ? 'w-[50px] h-[50px] md:w-[70px] md:h-[70px]' : 'w-[100px] h-[100px] md:w-[150px] md:h-[150px]'}`}
+              />
+              <Image 
+                src="/logo.png" 
+                alt="logo" 
+                width={150} 
+                height={100} 
+                className={`transition-all duration-300 object-contain ${isScrolled ? 'w-[50px] h-[33px] md:w-[70px] md:h-[47px]' : 'w-[100px] h-[67px] md:w-[150px] md:h-[100px]'}`}
+              />
+              <Image 
+                src="/lounge-logo.png" 
+                alt="logo" 
+                width={150} 
+                height={150} 
+                className={`transition-all duration-300 ${isScrolled ? 'w-[50px] h-[50px] md:w-[70px] md:h-[70px]' : 'w-[100px] h-[100px] md:w-[150px] md:h-[150px]'}`}
+              />
           </div>
 
           {/* Hamburger Menu Button */}
@@ -39,7 +57,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div className={`md:hidden fixed inset-0 bg-black bg-opacity-95 backdrop-blur-sm z-40 transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className='flex flex-col items-center justify-center h-full space-y-8 text-[#e2b76a] text-xl'>
+          <div className='flex flex-col items-center justify-center h-full space-y-6 text-[#e2b76a] text-xl pt-20'>
             <Link href="/" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
             <div className='relative group'>
               <button className='hover:text-[#c69c59] transition-colors'>About</button>
@@ -53,7 +71,7 @@ const Header = () => {
             <Link href="/events" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Events</Link>
             <Link href="/reservation" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Reservation</Link>
             <Link href="/contact" className="hover:text-[#c69c59] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-            <Link href="/diamond-members" className="px-6 py-2 border-2 border-[#e2b76a] rounded-2xl hover:bg-[#e2b76a] hover:text-black transition-all" onClick={() => setIsMobileMenuOpen(false)}>Diamond Members</Link>
+            <Link href="/diamond-members" className="px-6 py-2 border-2 border-[#e2b76a] rounded-2xl hover:bg-[#e2b76a] hover:text-black transition-all mt-4" onClick={() => setIsMobileMenuOpen(false)}>Diamond Members</Link>
           </div>
         </div>
 
