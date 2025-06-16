@@ -62,7 +62,7 @@ const ReservationPage = () => {
   // Available time slots
   const timeSlots = [
     '17:00', '17:30', '18:00', '18:30', '19:00', '19:30',
-    '20:00', '20:30', '21:00', '21:30', '22:00', '22:30'
+    '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30', '00:00', '00:30', '01:00', '01:30'
   ]
 
   if (submitted) {
@@ -79,7 +79,7 @@ const ReservationPage = () => {
               setFormData({
                 date: '',
                 time: '',
-                partySize: '2',
+                partySize: '',
                 name: '',
                 email: '',
                 phone: '',
@@ -164,17 +164,16 @@ const ReservationPage = () => {
                 <FaUsers className="inline-block mr-2 text-[#e2b76a]" />
                 Party Size
               </label>
-              <select
+              <input
+                type="number"
                 name="partySize"
                 value={formData.partySize}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-black/50 border border-[#e2b76a]/20 rounded-lg focus:outline-none focus:border-[#e2b76a] text-white appearance-none"
-              >
-                {[1,2,3,4,5,6,7,8,9,10].map(size => (
-                  <option key={size} value={size}>{size} {size === 1 ? 'Person' : 'People'}</option>
-                ))}
-              </select>
+                min={1}
+                max={100}
+                className="w-full px-4 py-3 bg-black/50 border border-[#e2b76a]/20 rounded-lg focus:outline-none focus:border-[#e2b76a] text-white"
+              />
             </div>
 
             {/* Occasion */}
