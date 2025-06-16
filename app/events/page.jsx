@@ -135,10 +135,12 @@ const Events = () => {
                   ))}
                 </div>
               </div>
-
+              
+              <a href="/reservation">
               <button className="w-full cursor-pointer md:w-auto px-8 py-4 bg-[#e2b76a] text-black rounded-full text-xl font-semibold hover:bg-[#e2b76a]/90 transition-colors duration-300">
                 Make Reservation
               </button>
+              </a>
             </div>
           </div>
         </div>
