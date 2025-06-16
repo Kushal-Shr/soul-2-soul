@@ -18,6 +18,7 @@ export const metadata = {
   description: "A lively haven where elegant relaxation and soulful sensations meet.",
   icons: {
     icon: '/logo.png',
+    
   },
 };
 
